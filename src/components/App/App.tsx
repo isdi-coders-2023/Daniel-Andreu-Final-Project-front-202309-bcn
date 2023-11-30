@@ -1,5 +1,7 @@
+import Header from "../Header/Header";
+
 const App = (): React.ReactElement => {
-  return <div></div>;
+  return <Header></Header>;
 };
 
 export default App;
