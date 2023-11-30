@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { mainTheme } from "../../styles/mainTheme";
 import App from "./App";
@@ -10,7 +11,9 @@ describe("Given an App component", () => {
 
       render(
         <ThemeProvider theme={mainTheme}>
-          <App />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </ThemeProvider>,
       );
 
