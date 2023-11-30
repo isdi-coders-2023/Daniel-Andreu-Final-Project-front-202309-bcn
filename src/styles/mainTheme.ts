@@ -3,12 +3,12 @@ import { DefaultTheme } from "styled-components";
 const mainTheme: DefaultTheme = {
   colors: {
     basic: {
-      lightColor: "#FFFFFF",
-      darkColor: "#222222",
+      lightColor: "#FFF",
+      darkColor: "#222",
     },
     neutral: {
       lightColor: "#F7F7F7",
-      mediumLightColor: "#DDDDDD",
+      mediumLightColor: "#DDD",
       mediumColor: "#C2C2C2",
       darkColor: "#717171",
     },
@@ -17,6 +17,9 @@ const mainTheme: DefaultTheme = {
       accentColor: "#DE2B56",
       secondaryColor: "#C72D65",
       selectionColor: "#006C6F",
+    },
+    shadow: {
+      basicShadow: "#00000040",
     },
   },
 
