@@ -11,7 +11,7 @@ const BottomNavigation = (): React.ReactElement => {
               <img
                 className="navigation__icon"
                 src={
-                  isActive ? "images/exploreActive.svg" : "images/expore.svg"
+                  isActive ? "images/exploreActive.svg" : "images/explore.svg"
                 }
                 alt="icono de explorar"
                 width="36"
