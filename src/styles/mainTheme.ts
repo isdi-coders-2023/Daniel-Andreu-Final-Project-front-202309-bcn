@@ -18,6 +18,9 @@ const mainTheme: DefaultTheme = {
       secondaryColor: "#C72D65",
       selectionColor: "#006C6F",
     },
+    shadow: {
+      basicShadow: "#00000040",
+    },
   },
 
   typography: {

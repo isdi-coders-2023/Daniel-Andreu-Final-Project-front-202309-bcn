@@ -1,13 +1,16 @@
+import HeaderStyled from "./HeaderStyled";
+
 const Header = (): React.ReactElement => {
   return (
-    <header>
+    <HeaderStyled className="header">
       <img
+        className="header__logo"
         src="images/ReStepsLogo.svg"
         alt="ReSteps logo"
-        width="100"
+        width="88"
         height="auto"
       />
-    </header>
+    </HeaderStyled>
   );
 };
 export default Header;

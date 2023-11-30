@@ -19,6 +19,9 @@ declare module "styled-components" {
         secondaryColor: string;
         selectionColor: string;
       };
+      shadow: {
+        basicShadow: string;
+      };
     };
 
     typography: {
