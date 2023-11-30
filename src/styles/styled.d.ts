@@ -23,7 +23,6 @@ declare module "styled-components" {
         basicShadow: string;
       };
     };
-
     typography: {
       mainFont: string;
     };
