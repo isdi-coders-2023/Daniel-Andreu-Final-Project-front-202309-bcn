@@ -1,17 +1,18 @@
 import { useAppSelector } from "../../store/hooks";
+import ShoesListStyled from "./ShoesListStyled";
 
 const ShoesList = (): React.ReactElement => {
   const shoes = useAppSelector((state) => {
     return state.shoesState.shoes;
   });
   return (
-    <ul>
+    <ShoesListStyled>
       {shoes.map((shoe) => (
         <li key={shoe._id}>
           <div></div>
         </li>
       ))}
-    </ul>
+    </ShoesListStyled>
   );
 };
 export default ShoesList;
