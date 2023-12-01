@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { shoesReducer } from "./features/shoes/shoesSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    shoesState: shoesReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
