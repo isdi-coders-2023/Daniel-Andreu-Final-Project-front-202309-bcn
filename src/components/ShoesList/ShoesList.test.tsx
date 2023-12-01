@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
 import renderWithProviders from "../../testUtils/renderWithProviders";
 import ShoesList from "./ShoesList";
+import shoesMock from "../../mocks/shoesMock";
 
 describe("Given a ShoesList component", () => {
   describe("When it receives an array of movies with 'Nike Blazer Blancas' and 'Air Jordan Retro 1'", () => {
@@ -11,6 +12,22 @@ describe("Given a ShoesList component", () => {
       const listItems = screen.getAllByRole("listitem").length;
 
       expect(listItems).toBe(expectedListItems);
+    });
+
+    test("Then it should create 2 shoe articles, one with 'Nike Blazer Blancas' and the other with 'Air Jordan Retro 1'", () => {
+      const expectedFirstShoe = shoesMock[0].title;
+      const expectedSecondShoe = shoesMock[1].title;
+
+      renderWithProviders(<ShoesList />);
+      const firstShoe = screen.getByRole("heading", {
+        name: expectedFirstShoe,
+      });
+      const secondShoe = screen.getByRole("heading", {
+        name: expectedSecondShoe,
+      });
+
+      expect(firstShoe).toBeInTheDocument();
+      expect(secondShoe).toBeInTheDocument();
     });
   });
 });
