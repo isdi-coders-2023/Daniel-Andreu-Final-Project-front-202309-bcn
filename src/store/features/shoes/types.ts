@@ -8,6 +8,7 @@ export interface ShoeDataStructure {
   description: string;
   isBoxIncluded: boolean;
   isChangesAccepted: boolean;
+  isFavourite: boolean;
   name: string;
   phone: string;
   location: string;

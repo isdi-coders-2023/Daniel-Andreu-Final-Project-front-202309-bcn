@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store/hooks";
+import ShoeCard from "../ShoeCard/ShoeCard";
 import ShoesListStyled from "./ShoesListStyled";
 
 const ShoesList = (): React.ReactElement => {
@@ -9,7 +10,7 @@ const ShoesList = (): React.ReactElement => {
     <ShoesListStyled>
       {shoes.map((shoe) => (
         <li key={shoe._id}>
-          <div></div>
+          <ShoeCard shoe={shoe} />
         </li>
       ))}
     </ShoesListStyled>
