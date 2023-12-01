@@ -1,5 +1,4 @@
-interface ShoeStructure {
-  id: string;
+export interface ShoeDataStructure {
   title: string;
   image: string;
   price: number;
@@ -14,4 +13,10 @@ interface ShoeStructure {
   location: string;
 }
 
-export default ShoeStructure;
+export interface ShoeStructure extends ShoeDataStructure {
+  _id: string;
+}
+
+export interface ShoesStateStructure {
+  shoes: ShoeStructure[];
+}
