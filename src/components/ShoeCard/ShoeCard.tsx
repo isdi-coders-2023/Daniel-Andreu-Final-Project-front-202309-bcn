@@ -1,4 +1,5 @@
 import { ShoeStructure } from "../../store/features/shoes/types";
+import ShoesCardStyled from "./ShoeCardStyled";
 
 interface ShoeCardProps {
   shoe: ShoeStructure;
@@ -8,7 +9,7 @@ const ShoeCard = ({
   shoe: { image, title, size, shoeStatus, price, isChangesAccepted, location },
 }: ShoeCardProps): React.ReactElement => {
   return (
-    <article className="shoe">
+    <ShoesCardStyled className="shoe">
       <div className="shoe__image-container">
         <img
           className="shoe__image"
@@ -19,7 +20,7 @@ const ShoeCard = ({
         />
       </div>
       <h2 className="shoe__title">{title}</h2>
-      <div className="shoe__info">
+      <div className="shoe__info-first">
         <span className="shoe__location">{location}</span>
         <div className="shoe__status-container">
           <img
@@ -27,12 +28,12 @@ const ShoeCard = ({
             src="images/star.svg"
             alt="icono de estrella"
             width="20"
-            height="auto"
+            height="20"
           />
           <span className="shoe__status">{shoeStatus}</span>
         </div>
       </div>
-      <div className="shoe__info">
+      <div className="shoe__info-second">
         <div className="shoe__price-and-changes">
           <span className="shoe__price">{price}€</span>
           <span className="shoe__changes">
@@ -41,7 +42,7 @@ const ShoeCard = ({
         </div>
         <span className="shoe__size">Talla {size} EU</span>
       </div>
-    </article>
+    </ShoesCardStyled>
   );
 };
 
