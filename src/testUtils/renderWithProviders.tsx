@@ -8,7 +8,7 @@ import { shoesReducer } from "../store/features/shoes/shoesSlice";
 import shoesMock from "../mocks/shoesMock";
 import { mainTheme } from "../styles/mainTheme";
 
-const customRender = (children: React.ReactElement) => {
+const renderWithProviders = (children: React.ReactElement) => {
   const mockStore = configureStore({
     reducer: {
       shoesState: shoesReducer,
@@ -28,4 +28,4 @@ const customRender = (children: React.ReactElement) => {
   );
 };
 
-export default customRender;
+export default renderWithProviders;
