@@ -5,7 +5,7 @@ const BottomNavigationStyled = styled.ul`
   bottom: 0;
   width: 100%;
   padding-top: 12px;
-  padding-bottom: 32px;
+  padding-bottom: 22px;
   display: flex;
   justify-content: space-around;
   min-height: 75px;
