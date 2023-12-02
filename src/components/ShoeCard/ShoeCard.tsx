@@ -1,4 +1,5 @@
 import { ShoeStructure } from "../../store/features/shoes/types";
+import Button from "../Button/Button";
 import ShoesCardStyled from "./ShoeCardStyled";
 
 interface ShoeCardProps {
@@ -41,6 +42,20 @@ const ShoeCard = ({
           </span>
         </div>
         <span className="shoe__size">Talla {size} EU</span>
+      </div>
+      <div className="shoe__buttons-container">
+        <Button
+          type="button"
+          actionOnClick={() => {}}
+          className="button__primary-circular"
+          text="Modificar"
+        />
+        <Button
+          type="button"
+          actionOnClick={() => {}}
+          className="button__secondary-circular"
+          text="Eliminar"
+        />
       </div>
     </ShoesCardStyled>
   );
