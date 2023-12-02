@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ShoesCardStyled = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
   max-width: 420px;
   .shoe {
     &__image {
@@ -72,6 +72,12 @@ const ShoesCardStyled = styled.article`
       font-size: 1rem;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.neutral.darkColor};
+    }
+
+    &__buttons-container {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 10px;
     }
   }
 `;
