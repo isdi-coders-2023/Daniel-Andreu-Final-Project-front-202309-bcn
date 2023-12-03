@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
-import renderWithProviders from "../../testUtils/renderWithProviders";
 import ShoesList from "./ShoesList";
 import shoesMock from "../../mocks/shoesMock";
+import { renderWithProviders } from "../../testUtils/testUtils";
 
 describe("Given a ShoesList component", () => {
   describe("When it receives an array of movies with 'Nike Blazer Blancas' and 'Air Jordan Retro 1'", () => {

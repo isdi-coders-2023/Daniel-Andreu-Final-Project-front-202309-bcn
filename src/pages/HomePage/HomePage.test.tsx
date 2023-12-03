@@ -1,6 +1,6 @@
+import { renderWithProviders } from "../../testUtils/testUtils";
 import HomePage from "./HomePage";
 import { screen } from "@testing-library/react";
-import renderWithProviders from "../../testUtils/renderWithProviders";
 
 describe("Given a HomePage page component", () => {
   describe("When it's called", () => {

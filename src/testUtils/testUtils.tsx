@@ -7,8 +7,9 @@ import GlobalStyle from "../styles/GlobalStyle";
 import { shoesReducer } from "../store/features/shoes/shoesSlice";
 import shoesMock from "../mocks/shoesMock";
 import { mainTheme } from "../styles/mainTheme";
+import { PropsWithChildren } from "react";
 
-const renderWithProviders = (children: React.ReactElement) => {
+export const renderWithProviders = (children: React.ReactElement) => {
   const mockStore = configureStore({
     reducer: {
       shoesState: shoesReducer,
@@ -28,4 +29,17 @@ const renderWithProviders = (children: React.ReactElement) => {
   );
 };
 
-export default renderWithProviders;
+export const providerWrapper = ({ children }: PropsWithChildren) => {
+  const mockStore = configureStore({
+    reducer: {
+      shoesState: shoesReducer,
+    },
+    preloadedState: { shoesState: { shoes: shoesMock } },
+  });
+
+  return (
+    <BrowserRouter>
+      <Provider store={mockStore}>{children}</Provider>
+    </BrowserRouter>
+  );
+};

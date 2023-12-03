@@ -1,18 +1,21 @@
 import { useDispatch } from "react-redux";
 import HomePageStyled from "./HomePageStyled";
 import { useEffect } from "react";
-import { loadShoesActionCreator } from "../../store/features/shoes/shoesSlice";
-import shoesMock from "../../mocks/shoesMock";
 import ShoesList from "../../components/ShoesList/ShoesList";
+import useShoesApi from "../../hooks/useShoesApi";
+import { loadShoesActionCreator } from "../../store/features/shoes/shoesSlice";
 
 const HomePage = (): React.ReactElement => {
   const dispatch = useDispatch();
+  const { getShoes } = useShoesApi();
 
   useEffect(() => {
     (async () => {
-      dispatch(loadShoesActionCreator(shoesMock));
+      const { shoes } = await getShoes();
+
+      dispatch(loadShoesActionCreator(shoes));
     })();
-  }, [dispatch]);
+  }, [dispatch, getShoes]);
 
   return (
     <HomePageStyled>

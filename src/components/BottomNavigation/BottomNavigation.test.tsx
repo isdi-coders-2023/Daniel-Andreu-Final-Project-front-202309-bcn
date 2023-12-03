@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import BottomNavigation from "./BottomNavigation";
-import renderWithProviders from "../../testUtils/renderWithProviders";
+import { renderWithProviders } from "../../testUtils/testUtils";
 
 describe("Given a BottomNavigation component", () => {
   describe("When it's rendered", () => {
