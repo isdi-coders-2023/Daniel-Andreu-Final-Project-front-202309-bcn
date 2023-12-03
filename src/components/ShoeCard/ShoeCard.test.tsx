@@ -1,8 +1,8 @@
 import { screen } from "@testing-library/react";
 import shoesMock from "../../mocks/shoesMock";
 import { ShoeStructure } from "../../store/features/shoes/types";
-import renderWithProviders from "../../testUtils/renderWithProviders";
 import ShoeCard from "./ShoeCard";
+import { renderWithProviders } from "../../testUtils/testUtils";
 
 describe("Given a ShoeCard component", () => {
   describe("When it receives the shoe 'Nike Blazer Blancas'", () => {
