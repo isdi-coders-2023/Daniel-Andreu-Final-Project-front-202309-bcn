@@ -4,7 +4,7 @@ import shoesMock from "../../mocks/shoesMock";
 import { renderWithProviders } from "../../testUtils/testUtils";
 
 describe("Given a ShoesList component", () => {
-  describe("When it receives an array of movies with 'Nike Blazer Blancas' and 'Air Jordan Retro 1'", () => {
+  describe("When it receives an array of shoes with 'Nike Blazer Blancas' and 'Air Jordan Retro 1'", () => {
     test("Then it should create 2 listitems", () => {
       const expectedListItems = 2;
 
