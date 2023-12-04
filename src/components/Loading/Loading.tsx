@@ -4,7 +4,7 @@ const Loading = (): React.ReactElement => {
   return (
     <LoadingStyled className="loading">
       <span className="spinner"></span>
-      <span className="loading-text">Loading</span>
+      <span className="loading-text">Estamos preparando todo</span>
     </LoadingStyled>
   );
 };

@@ -8,15 +8,20 @@ import { shoesReducer } from "../store/features/shoes/shoesSlice";
 import shoesMock from "../mocks/shoesMock";
 import { mainTheme } from "../styles/mainTheme";
 import { PropsWithChildren } from "react";
+import { uiReducer } from "../store/features/ui/uiSlice";
+
+const mockStore = configureStore({
+  reducer: {
+    shoesState: shoesReducer,
+    uiState: uiReducer,
+  },
+  preloadedState: {
+    shoesState: { shoes: shoesMock },
+    uiState: { isLoading: false },
+  },
+});
 
 export const renderWithProviders = (children: React.ReactElement) => {
-  const mockStore = configureStore({
-    reducer: {
-      shoesState: shoesReducer,
-    },
-    preloadedState: { shoesState: { shoes: shoesMock } },
-  });
-
   render(
     <Provider store={mockStore}>
       <BrowserRouter>
@@ -30,13 +35,6 @@ export const renderWithProviders = (children: React.ReactElement) => {
 };
 
 export const providerWrapper = ({ children }: PropsWithChildren) => {
-  const mockStore = configureStore({
-    reducer: {
-      shoesState: shoesReducer,
-    },
-    preloadedState: { shoesState: { shoes: shoesMock } },
-  });
-
   return (
     <BrowserRouter>
       <Provider store={mockStore}>{children}</Provider>

@@ -2,10 +2,15 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import BottomNavigation from "../BottomNavigation/BottomNavigation";
 import Header from "../Header/Header";
 import HomePage from "../../pages/HomePage/HomePage";
+import { useAppSelector } from "../../store/hooks";
+import Loading from "../Loading/Loading";
 
 const App = (): React.ReactElement => {
+  const isLoading = useAppSelector((state) => state.uiState.isLoading);
+
   return (
     <>
+      {isLoading && <Loading />}
       <Header />
       <Routes>
         <Route path="/inicio" element={<HomePage />} />
