@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import HomePage from "../../pages/HomePage/HomePage";
 import { useAppSelector } from "../../store/hooks";
 import Loading from "../Loading/Loading";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 const App = (): React.ReactElement => {
   const isLoading = useAppSelector((state) => state.uiState.isLoading);
@@ -15,7 +16,7 @@ const App = (): React.ReactElement => {
       <Routes>
         <Route path="/inicio" element={<HomePage />} />
         <Route path="/" element={<Navigate to="/inicio" />} />
-        <Route path="*" element={<Navigate to="/inicio" />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <BottomNavigation />
     </>
