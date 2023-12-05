@@ -17,15 +17,17 @@ const useShoesApi = (): UseShoesApiStructure => {
   const getShoes = useCallback(async (): Promise<ShoesStateStructure> => {
     axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
-    dispatch(showLoadingActionCreator());
-
-    const { data: shoes } = await axios.get<{ shoes: ShoeStructure[] }>(
-      `/shoes`,
-    );
-
-    dispatch(hideLoadingActionCreator());
-
-    return shoes;
+    try {
+      dispatch(showLoadingActionCreator());
+      const { data: shoes } = await axios.get<{ shoes: ShoeStructure[] }>(
+        `/shoes`,
+      );
+      dispatch(hideLoadingActionCreator());
+      return shoes;
+    } catch (error) {
+      dispatch(hideLoadingActionCreator());
+      throw new Error((error as Error).message);
+    }
   }, [dispatch]);
 
   return {
