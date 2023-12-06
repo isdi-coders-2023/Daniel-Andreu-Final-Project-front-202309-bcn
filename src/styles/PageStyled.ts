@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PageStyled = styled.main`
-  margin: 12px 8px;
+  margin: 12px 12px;
   .main-heading {
     margin: 12px;
     text-align: center;
