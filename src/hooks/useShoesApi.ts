@@ -30,8 +30,27 @@ const useShoesApi = (): UseShoesApiStructure => {
     }
   }, [dispatch]);
 
+  const deleteShoe = useCallback(
+    async (shoeId: string): Promise<void> => {
+      axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+
+      dispatch(showLoadingActionCreator());
+
+      try {
+        const { data } = await axios.delete(`/shoes/${shoeId}`);
+        dispatch(hideLoadingActionCreator());
+        return data;
+      } catch (error) {
+        dispatch(hideLoadingActionCreator());
+        throw new Error((error as Error).message);
+      }
+    },
+    [dispatch],
+  );
+
   return {
     getShoes,
+    deleteShoe,
   };
 };
 
