@@ -5,6 +5,7 @@ import HomePage from "../../pages/HomePage/HomePage";
 import { useAppSelector } from "../../store/hooks";
 import Loading from "../Loading/Loading";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import { ToastContainer } from "react-toastify";
 
 const App = (): React.ReactElement => {
   const isLoading = useAppSelector((state) => state.uiState.isLoading);
@@ -18,6 +19,7 @@ const App = (): React.ReactElement => {
         <Route path="/" element={<Navigate to="/inicio" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer />
       <BottomNavigation />
     </>
   );
