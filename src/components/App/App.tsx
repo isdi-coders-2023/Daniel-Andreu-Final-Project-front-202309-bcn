@@ -6,6 +6,7 @@ import { useAppSelector } from "../../store/hooks";
 import Loading from "../Loading/Loading";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = (): React.ReactElement => {
   const isLoading = useAppSelector((state) => state.uiState.isLoading);

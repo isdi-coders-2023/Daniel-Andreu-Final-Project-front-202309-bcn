@@ -1,4 +1,8 @@
+import { toast } from "react-toastify";
+import useShoesApi from "../../hooks/useShoesApi";
+import { deleteShoeActionCreator } from "../../store/features/shoes/shoesSlice";
 import { ShoeStructure } from "../../store/features/shoes/types";
+import { useAppDispatch } from "../../store/hooks";
 import Button from "../Button/Button";
 import ShoesCardStyled from "./ShoeCardStyled";
 
@@ -7,8 +11,47 @@ interface ShoeCardProps {
 }
 
 const ShoeCard = ({
-  shoe: { image, title, size, shoeStatus, price, isChangesAccepted, location },
+  shoe: {
+    image,
+    title,
+    size,
+    shoeStatus,
+    price,
+    isChangesAccepted,
+    location,
+    _id,
+  },
 }: ShoeCardProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+  const { deleteShoe } = useShoesApi();
+
+  const deleteThisShoe = async (): Promise<void> => {
+    try {
+      await deleteShoe(_id);
+      dispatch(deleteShoeActionCreator(_id));
+      toast.success("Calzado eliminado correctamente", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      toast.error("No hemos podido eliminar el calzado", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
   return (
     <ShoesCardStyled className="shoe">
       <div className="shoe__image-container">
@@ -52,7 +95,9 @@ const ShoeCard = ({
         />
         <Button
           type="button"
-          actionOnClick={() => {}}
+          actionOnClick={() => {
+            deleteThisShoe();
+          }}
           className="button__secondary-circular"
           text="Eliminar"
         />

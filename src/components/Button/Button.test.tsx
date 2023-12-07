@@ -26,7 +26,7 @@ describe("Given a Button component", () => {
       renderWithProviders(
         <Button type="button" actionOnClick={expectedAction} text="test" />,
       );
-      const button = screen.getByRole("button", { name: "test" });
+      const button = screen.getByRole("button");
       await userEvent.click(button);
 
       expect(expectedAction).toHaveBeenCalled();
