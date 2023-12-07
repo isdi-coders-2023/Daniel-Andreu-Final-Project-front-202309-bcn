@@ -1,10 +1,12 @@
+import NewShoePageStyled from "./NewShoePageStyled";
+
 const NewShoePage = (): React.ReactElement => {
   return (
-    <main>
+    <NewShoePageStyled>
       <h1 className="main-heading">
         Añade un calzado y véndelo o cambialo por otro
       </h1>
-    </main>
+    </NewShoePageStyled>
   );
 };
 

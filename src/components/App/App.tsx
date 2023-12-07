@@ -7,6 +7,7 @@ import Loading from "../Loading/Loading";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NewShoePage from "../../pages/NewShoePage/NewShoePage";
 
 const App = (): React.ReactElement => {
   const isLoading = useAppSelector((state) => state.uiState.isLoading);
@@ -17,6 +18,7 @@ const App = (): React.ReactElement => {
       <Header />
       <Routes>
         <Route path="/inicio" element={<HomePage />} />
+        <Route path="/añadir-calzado" element={<NewShoePage />} />
         <Route path="/" element={<Navigate to="/inicio" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
