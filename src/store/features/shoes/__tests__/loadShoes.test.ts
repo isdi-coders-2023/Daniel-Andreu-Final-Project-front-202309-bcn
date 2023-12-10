@@ -1,4 +1,4 @@
-import shoesMock from "../../../../mocks/shoesMock";
+import { shoesMock } from "../../../../mocks/shoesMock";
 import { loadShoesActionCreator, shoesReducer } from "../shoesSlice";
 import { ShoesStateStructure } from "../types";
 

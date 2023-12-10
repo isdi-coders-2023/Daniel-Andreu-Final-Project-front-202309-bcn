@@ -1,5 +1,5 @@
 import { screen, waitFor } from "@testing-library/react";
-import shoesMock from "../../mocks/shoesMock";
+import { shoesMock } from "../../mocks/shoesMock";
 import { ShoeStructure } from "../../store/features/shoes/types";
 import ShoeCard from "./ShoeCard";
 import { renderWithProviders } from "../../testUtils/testUtils";
