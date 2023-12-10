@@ -18,7 +18,8 @@ const ShoesCardStyled = styled.article`
       color: ${({ theme }) => theme.colors.basic.darkColor};
     }
 
-    &__info-first {
+    &__info {
+      padding-top: 7px;
       display: flex;
       justify-content: space-between;
       gap: 4px;
@@ -41,13 +42,6 @@ const ShoesCardStyled = styled.article`
       font-size: 1rem;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.basic.darkColor};
-    }
-
-    &__info-second {
-      display: flex;
-      justify-content: space-between;
-      gap: 4px;
-      align-items: center;
     }
 
     &__price-and-changes {

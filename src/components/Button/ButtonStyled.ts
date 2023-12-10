@@ -29,6 +29,19 @@ const ButtonStyled = styled.button`
       border-radius: 100px;
       background-color: ${({ theme }) => theme.colors.basic.darkColor};
     }
+
+    &__primary-big {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline-color: transparent;
+      background: linear-gradient(
+        265deg,
+        ${({ theme }) => theme.colors.primary.secondaryColor} 0%,
+        ${({ theme }) => theme.colors.primary.primaryColor} 100%
+      );
+    }
   }
 `;
 

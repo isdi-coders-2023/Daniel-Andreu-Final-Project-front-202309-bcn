@@ -64,7 +64,7 @@ const ShoeCard = ({
         />
       </div>
       <h2 className="shoe__title">{title}</h2>
-      <div className="shoe__info-first">
+      <div className="shoe__info">
         <span className="shoe__location">{location}</span>
         <div className="shoe__status-container">
           <img
@@ -77,7 +77,7 @@ const ShoeCard = ({
           <span className="shoe__status">{shoeStatus}</span>
         </div>
       </div>
-      <div className="shoe__info-second">
+      <div className="shoe__info">
         <div className="shoe__price-and-changes">
           <span className="shoe__price">{price}€</span>
           <span className="shoe__changes">
