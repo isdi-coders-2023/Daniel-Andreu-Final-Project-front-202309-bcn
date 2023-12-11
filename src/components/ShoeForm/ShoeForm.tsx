@@ -82,6 +82,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       />
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="image"
           placeholder=""
@@ -95,6 +96,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </SmallInputContainerStyled>
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="title"
           placeholder=""
@@ -106,6 +108,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </SmallInputContainerStyled>
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="price"
           placeholder=""
@@ -170,6 +173,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </div>
       <BigInputContainerStyled>
         <BigInputInputStyled
+          tabIndex={0}
           id="description"
           placeholder=""
           value={description}
@@ -200,6 +204,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </SwitchLabelStyled>
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="name"
           placeholder=""
@@ -213,6 +218,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </SmallInputContainerStyled>
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="phone"
           placeholder=""
@@ -226,6 +232,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </SmallInputContainerStyled>
       <SmallInputContainerStyled>
         <SmallInputInputStyled
+          tabIndex={0}
           type="text"
           id="location"
           placeholder=""
