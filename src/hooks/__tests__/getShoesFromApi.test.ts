@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import { ShoesStateStructure } from "../../store/features/shoes/types";
-import shoesMock from "../../mocks/shoesMock";
+import { shoesMock } from "../../mocks/shoesMock";
 import useShoesApi from "../useShoesApi";
 import { providerWrapper } from "../../testUtils/testUtils";
 

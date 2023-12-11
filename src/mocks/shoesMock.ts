@@ -1,6 +1,9 @@
-import { ShoeStructure } from "../store/features/shoes/types";
+import {
+  ShoeDataStructure,
+  ShoeStructure,
+} from "../store/features/shoes/types";
 
-const shoesMock: ShoeStructure[] = [
+export const shoesMock: ShoeStructure[] = [
   {
     _id: "6566146eb17321660f118c7b",
     title: "Nike Blazer Blancas",
@@ -37,4 +40,19 @@ const shoesMock: ShoeStructure[] = [
   },
 ];
 
-export default shoesMock;
+export const newShoeData: ShoeDataStructure = {
+  title: "Nike Blazer Blancas",
+  image: "https://i.ibb.co/bW5YQZ3/1.webp",
+  price: 70,
+  size: 38,
+  brand: "Nike",
+  shoeStatus: "Como nuevo",
+  description:
+    "Vendo bambas Nike Blazer originales blancas, las he usado una única ve…",
+  isBoxIncluded: true,
+  isChangesAccepted: true,
+  isFavourite: true,
+  name: "Daniel Andreu",
+  phone: "659377296",
+  location: "Cornella de Llobregat",
+};

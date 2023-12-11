@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import ShoesList from "./ShoesList";
-import shoesMock from "../../mocks/shoesMock";
+import { shoesMock } from "../../mocks/shoesMock";
 import { renderWithProviders } from "../../testUtils/testUtils";
 
 describe("Given a ShoesList component", () => {
