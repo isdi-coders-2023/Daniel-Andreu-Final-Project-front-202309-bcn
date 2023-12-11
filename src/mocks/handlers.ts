@@ -10,4 +10,8 @@ export const handlers = [
   http.delete(`${apiUrl}/shoes/6566146eb17321660f118c7b`, async () =>
     HttpResponse.json({}),
   ),
+
+  http.post(`${apiUrl}/shoes`, async () =>
+    HttpResponse.json({ shoe: mock[0] }),
+  ),
 ];

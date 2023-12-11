@@ -6,5 +6,7 @@ import {
 export interface UseShoesApiStructure {
   getShoes: () => Promise<ShoesStateStructure>;
   deleteShoe: (shoeId: string) => Promise<void>;
-  addShoe: (newShoe: ShoeDataStructure) => Promise<void>;
+  addShoe: (
+    newShoe: ShoeDataStructure,
+  ) => Promise<ShoeDataStructure | undefined>;
 }

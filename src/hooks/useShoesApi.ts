@@ -18,10 +18,9 @@ import { useNavigate } from "react-router-dom";
 const useShoesApi = (): UseShoesApiStructure => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
   const getShoes = useCallback(async (): Promise<ShoesStateStructure> => {
-    axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-
     try {
       dispatch(showLoadingActionCreator());
       const { data: shoes } = await axios.get<{ shoes: ShoeStructure[] }>(
@@ -37,8 +36,6 @@ const useShoesApi = (): UseShoesApiStructure => {
 
   const deleteShoe = useCallback(
     async (shoeId: string): Promise<void> => {
-      axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-
       dispatch(showLoadingActionCreator());
 
       try {
@@ -54,13 +51,13 @@ const useShoesApi = (): UseShoesApiStructure => {
   );
 
   const addShoe = useCallback(
-    async (newShoe: ShoeDataStructure): Promise<void> => {
+    async (newShoe: ShoeDataStructure): Promise<ShoeStructure | undefined> => {
       dispatch(showLoadingActionCreator());
 
       try {
         const {
           data: { shoe },
-        } = await axios.post<{ shoe: ShoeStructure }>("/shoes", newShoe);
+        } = await axios.post<{ shoe: ShoeStructure }>(`/shoes`, newShoe);
         dispatch(addShoeActionCreator(shoe));
         toast.success("Calzado añadido correctamente", {
           position: "top-center",
@@ -74,6 +71,7 @@ const useShoesApi = (): UseShoesApiStructure => {
         });
         dispatch(hideLoadingActionCreator());
         navigate("/inicio");
+        return shoe;
       } catch (error) {
         dispatch(hideLoadingActionCreator());
         toast.error("No hemos podido añadir el calzado", {
@@ -86,7 +84,6 @@ const useShoesApi = (): UseShoesApiStructure => {
           progress: undefined,
           theme: "light",
         });
-        throw new Error((error as Error).message);
       }
     },
     [dispatch, navigate],
