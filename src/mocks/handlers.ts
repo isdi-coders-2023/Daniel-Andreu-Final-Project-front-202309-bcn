@@ -14,4 +14,8 @@ export const handlers = [
   http.post(`${apiUrl}/shoes`, async () =>
     HttpResponse.json({ shoe: mock[0] }),
   ),
+
+  http.get(`${apiUrl}/shoes/6566146eb17321660f118c7b`, async () =>
+    HttpResponse.json({ shoe: mock[0] }),
+  ),
 ];

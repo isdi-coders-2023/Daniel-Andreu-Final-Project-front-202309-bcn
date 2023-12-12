@@ -1,5 +1,6 @@
 import {
   ShoeDataStructure,
+  ShoeStructure,
   ShoesStateStructure,
 } from "../store/features/shoes/types";
 
@@ -9,4 +10,5 @@ export interface UseShoesApiStructure {
   addShoe: (
     newShoe: ShoeDataStructure,
   ) => Promise<ShoeDataStructure | undefined>;
+  getShoe: (shoeId: string) => Promise<ShoeStructure | undefined>;
 }

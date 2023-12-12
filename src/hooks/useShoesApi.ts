@@ -40,10 +40,13 @@ const useShoesApi = (): UseShoesApiStructure => {
 
       try {
         const { data } = await axios.delete(`/shoes/${shoeId}`);
+
         dispatch(hideLoadingActionCreator());
+
         return data;
       } catch (error) {
         dispatch(hideLoadingActionCreator());
+
         throw new Error((error as Error).message);
       }
     },
@@ -58,7 +61,9 @@ const useShoesApi = (): UseShoesApiStructure => {
         const {
           data: { shoe },
         } = await axios.post<{ shoe: ShoeStructure }>(`/shoes`, newShoe);
+
         dispatch(addShoeActionCreator(shoe));
+
         toast.success("Calzado añadido correctamente", {
           position: "top-center",
           autoClose: 5000,
@@ -69,11 +74,15 @@ const useShoesApi = (): UseShoesApiStructure => {
           progress: undefined,
           theme: "light",
         });
+
         dispatch(hideLoadingActionCreator());
+
         navigate("/inicio");
+
         return shoe;
       } catch (error) {
         dispatch(hideLoadingActionCreator());
+
         toast.error("No hemos podido añadir el calzado", {
           position: "top-center",
           autoClose: 5000,
@@ -89,10 +98,41 @@ const useShoesApi = (): UseShoesApiStructure => {
     [dispatch, navigate],
   );
 
+  const getShoe = useCallback(
+    async (shoeId: string): Promise<ShoeStructure | undefined> => {
+      dispatch(showLoadingActionCreator());
+
+      try {
+        const {
+          data: { shoe },
+        } = await axios.get<{ shoe: ShoeStructure }>(`/shoes/${shoeId}`);
+
+        dispatch(hideLoadingActionCreator());
+
+        return shoe;
+      } catch {
+        dispatch(hideLoadingActionCreator());
+
+        toast.error("No se ha podido cargar el calzado", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    },
+    [dispatch],
+  );
+
   return {
     getShoes,
     deleteShoe,
     addShoe,
+    getShoe,
   };
 };
 
