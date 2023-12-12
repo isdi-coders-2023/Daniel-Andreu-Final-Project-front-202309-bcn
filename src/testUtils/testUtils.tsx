@@ -17,7 +17,7 @@ const mockStore = configureStore({
     uiState: uiReducer,
   },
   preloadedState: {
-    shoesState: { shoes: shoesMock },
+    shoesState: { shoes: shoesMock, shoe: shoesMock[0] },
     uiState: { isLoading: false },
   },
 });

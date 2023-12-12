@@ -7,10 +7,11 @@ describe("Given a shoesSlice's deleteShoe reducer", () => {
     test("Then it should return thWe list of shoes without 'Nike Blazer Blancas'", () => {
       const initialState: ShoesStateStructure = { shoes: shoesMock };
       const expectedDeletedTitle = "Nike Blazer Blancas";
+      const shoeId = "6566146eb17321660f118c7b";
 
       const actualShoesState = shoesReducer(
         initialState,
-        deleteShoeActionCreator("6566146eb17321660f118c7b"),
+        deleteShoeActionCreator(shoeId),
       );
 
       actualShoesState.shoes.forEach((shoe) => {

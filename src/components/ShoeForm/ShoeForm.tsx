@@ -12,7 +12,7 @@ import {
   SwitchLabelStyled,
   SwitchStyled,
 } from "./ShoeFormStyled";
-import { brands, possibleStatus, sizes } from "../../data/list";
+import { brands, possibleStatus, sizes } from "../../data/data";
 import Button from "../Button/Button";
 
 interface ShoeFormProps {
@@ -80,9 +80,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           currentTarget.src = "images/imageNotFound.svg";
         }}
       />
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="image"
           placeholder=""
@@ -94,9 +93,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           URL de la imagen
         </SmallInputLabelStyled>
       </SmallInputContainerStyled>
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="title"
           placeholder=""
@@ -106,9 +104,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
         />
         <SmallInputLabelStyled htmlFor="title">Título</SmallInputLabelStyled>
       </SmallInputContainerStyled>
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="price"
           placeholder=""
@@ -129,8 +126,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           <option value="Talla" disabled>
             Talla
           </option>
-          {sizes.map((size, position) => (
-            <option key={position} value={size}>
+          {sizes.map((size) => (
+            <option key={size} value={size}>
               {size} EU
             </option>
           ))}
@@ -145,8 +142,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           <option value="Marca" disabled>
             Marca
           </option>
-          {brands.map((brand, position) => (
-            <option key={position} value={brand}>
+          {brands.map((brand) => (
+            <option key={brand} value={brand}>
               {brand}
             </option>
           ))}
@@ -154,9 +151,9 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
       </div>
       <span className="form-text">¿En qué estado se encuentra el calzado?</span>
       <div className="status-container">
-        {possibleStatus.map((actualStatus, position) => (
+        {possibleStatus.map((actualStatus) => (
           <div
-            key={position}
+            key={actualStatus}
             className={status === actualStatus ? "toogled" : "not-toggled"}
           >
             <input
@@ -171,9 +168,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           </div>
         ))}
       </div>
-      <BigInputContainerStyled>
+      <BigInputContainerStyled tabIndex={0}>
         <BigInputInputStyled
-          tabIndex={0}
           id="description"
           placeholder=""
           value={description}
@@ -202,9 +198,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
         />
         <SwitchStyled />
       </SwitchLabelStyled>
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="name"
           placeholder=""
@@ -216,9 +211,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           Nombre completo
         </SmallInputLabelStyled>
       </SmallInputContainerStyled>
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="phone"
           placeholder=""
@@ -230,9 +224,8 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
           Número de teléfono
         </SmallInputLabelStyled>
       </SmallInputContainerStyled>
-      <SmallInputContainerStyled>
+      <SmallInputContainerStyled tabIndex={0}>
         <SmallInputInputStyled
-          tabIndex={0}
           type="text"
           id="location"
           placeholder=""
