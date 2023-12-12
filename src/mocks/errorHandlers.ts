@@ -8,4 +8,6 @@ export const errorHandlers = [
   http.delete(`${apiUrl}/shoes/:shoeId`, async () => HttpResponse.error()),
 
   http.post(`${apiUrl}/shoes`, async () => HttpResponse.error()),
+
+  http.get(`${apiUrl}/shoes/:shoeId`, async () => HttpResponse.error()),
 ];
