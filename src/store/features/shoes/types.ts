@@ -20,4 +20,5 @@ export interface ShoeStructure extends ShoeDataStructure {
 
 export interface ShoesStateStructure {
   shoes: ShoeStructure[];
+  shoe?: ShoeStructure;
 }

@@ -27,12 +27,17 @@ const shoesSlice = createSlice({
       ...currentState,
       shoes: [...currentState.shoes, action.payload],
     }),
+    loadShoe: (
+      currentState: ShoesStateStructure,
+      action: PayloadAction<ShoeStructure>,
+    ): ShoesStateStructure => ({ ...currentState, shoe: action.payload }),
   },
 });
 export const {
   loadShoes: loadShoesActionCreator,
   deleteShoe: deleteShoeActionCreator,
   addShoe: addShoeActionCreator,
+  loadShoe: loadShoeActionCreator,
 } = shoesSlice.actions;
 
 export const shoesReducer = shoesSlice.reducer;
