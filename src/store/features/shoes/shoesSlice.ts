@@ -3,6 +3,7 @@ import { ShoeStructure, ShoesStateStructure } from "./types";
 
 const initialShoesState: ShoesStateStructure = {
   shoes: [],
+  shoe: {} as ShoeStructure,
 };
 
 const shoesSlice = createSlice({

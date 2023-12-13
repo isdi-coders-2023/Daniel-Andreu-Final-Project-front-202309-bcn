@@ -13,6 +13,7 @@ const ShoesCardStyled = styled.article`
     }
 
     &__title {
+      text-align: start;
       font-size: 1.4rem;
       font-weight: 600;
       color: ${({ theme }) => theme.colors.basic.darkColor};
