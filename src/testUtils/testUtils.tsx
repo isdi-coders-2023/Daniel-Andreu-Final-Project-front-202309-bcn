@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
@@ -32,6 +32,23 @@ export const renderWithProviders = (children: React.ReactElement) => {
           {children}
         </ThemeProvider>
       </BrowserRouter>
+    </Provider>,
+  );
+};
+
+export const renderWithProvidersAndPath = (
+  children: React.ReactElement,
+  path: string,
+) => {
+  render(
+    <Provider store={mockStore}>
+      <MemoryRouter initialEntries={[path]}>
+        <ThemeProvider theme={mainTheme}>
+          <ToastContainer />
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
+      </MemoryRouter>
     </Provider>,
   );
 };
