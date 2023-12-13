@@ -11,7 +11,7 @@ const BottomNavigation = (): React.ReactElement => {
               <img
                 className="navigation__icon"
                 src={
-                  isActive ? "images/exploreActive.svg" : "images/explore.svg"
+                  isActive ? "/images/exploreActive.svg" : "/images/explore.svg"
                 }
                 alt="icono de explorar"
                 width="36"
@@ -36,8 +36,8 @@ const BottomNavigation = (): React.ReactElement => {
                 className="navigation__icon"
                 src={
                   isActive
-                    ? "images/favoritesActive.svg"
-                    : "images/favorites.svg"
+                    ? "/images/favoritesActive.svg"
+                    : "/images/favorites.svg"
                 }
                 alt="icono de favoritos"
                 width="36"
@@ -60,7 +60,7 @@ const BottomNavigation = (): React.ReactElement => {
             <>
               <img
                 className="navigation__icon"
-                src={isActive ? "images/addActive.svg" : "images/add.svg"}
+                src={isActive ? "/images/addActive.svg" : "/images/add.svg"}
                 alt="icono de añadir"
                 width="36"
                 height="36"
