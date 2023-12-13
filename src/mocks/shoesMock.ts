@@ -31,7 +31,7 @@ export const shoesMock: ShoeStructure[] = [
     shoeStatus: "Sin estrenar",
     description:
       "Me las regalaron por cumpleaños pero no son mi estilo, no he llegado a…",
-    isBoxIncluded: true,
+    isBoxIncluded: false,
     isChangesAccepted: false,
     isFavourite: false,
     name: "Bárbara Gimeno",
