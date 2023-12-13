@@ -23,10 +23,13 @@ const useShoesApi = (): UseShoesApiStructure => {
   const getShoes = useCallback(async (): Promise<ShoesStateStructure> => {
     try {
       dispatch(showLoadingActionCreator());
+
       const { data: shoes } = await axios.get<{ shoes: ShoeStructure[] }>(
         `/shoes`,
       );
+
       dispatch(hideLoadingActionCreator());
+
       return shoes;
     } catch (error) {
       dispatch(hideLoadingActionCreator());
@@ -80,7 +83,7 @@ const useShoesApi = (): UseShoesApiStructure => {
         navigate("/inicio");
 
         return shoe;
-      } catch (error) {
+      } catch {
         dispatch(hideLoadingActionCreator());
 
         toast.error("No hemos podido añadir el calzado", {
