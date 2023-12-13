@@ -78,6 +78,7 @@ const ShoeForm = ({ actionOnSubmit }: ShoeFormProps): React.ReactElement => {
         onError={({ currentTarget }) => {
           currentTarget.onerror = null;
           currentTarget.src = "images/imageNotFound.svg";
+          currentTarget.alt = "imagen no encontrada";
         }}
       />
       <SmallInputContainerStyled tabIndex={0}>

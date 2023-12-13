@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { Store, configureStore } from "@reduxjs/toolkit";
 import GlobalStyle from "../styles/GlobalStyle";
 import { shoesReducer } from "../store/features/shoes/shoesSlice";
 import { ToastContainer } from "react-toastify";
@@ -22,9 +22,12 @@ const mockStore = configureStore({
   },
 });
 
-export const renderWithProviders = (children: React.ReactElement) => {
+export const renderWithProviders = (
+  children: React.ReactElement,
+  optionalStore?: Store,
+) => {
   render(
-    <Provider store={mockStore}>
+    <Provider store={optionalStore ?? mockStore}>
       <BrowserRouter>
         <ThemeProvider theme={mainTheme}>
           <ToastContainer />
