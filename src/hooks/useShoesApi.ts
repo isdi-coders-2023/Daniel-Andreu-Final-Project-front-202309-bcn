@@ -81,6 +81,7 @@ const useShoesApi = (): UseShoesApiStructure => {
         dispatch(hideLoadingActionCreator());
 
         navigate("/inicio");
+        scrollTo(0, 0);
 
         return shoe;
       } catch {

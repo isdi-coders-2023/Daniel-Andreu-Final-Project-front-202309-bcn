@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import { renderWithProviders } from "../../testUtils/testUtils";
 import ShoeForm from "./ShoeForm";
 import userEvent from "@testing-library/user-event";
@@ -64,6 +64,38 @@ describe("Given a ShoeForm component", () => {
       await userEvent.type(titleInput, textWritten);
 
       expect(titleInput).toHaveValue(textWritten);
+    });
+  });
+
+  describe("When it's rendered and a user clicks on the 'Bien' status option", () => {
+    test("Then it should show the 'Bien' option checked", async () => {
+      const statusInputText = "Bien";
+
+      renderWithProviders(<ShoeForm actionOnSubmit={onSubmit} />);
+
+      const statusInput = screen.getByLabelText(statusInputText);
+
+      await userEvent.click(statusInput);
+
+      expect(statusInput).toBeChecked();
+    });
+  });
+
+  describe("When it's rendered but an error occurs loading the image", () => {
+    test("Then it should show the 'imageNotFound' placeholder instead", () => {
+      const initialAltText = "calzado subido";
+
+      renderWithProviders(<ShoeForm actionOnSubmit={onSubmit} />);
+
+      const imageElement = screen.getByAltText(
+        initialAltText,
+      ) as HTMLImageElement | null;
+
+      if (imageElement) {
+        fireEvent.error(imageElement);
+        expect(imageElement.src).toContain("images/imageNotFound.svg");
+        expect(imageElement.alt).toEqual("imagen no encontrada");
+      }
     });
   });
 });
