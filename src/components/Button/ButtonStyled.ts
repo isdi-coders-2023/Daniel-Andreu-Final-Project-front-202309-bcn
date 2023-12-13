@@ -42,6 +42,15 @@ const ButtonStyled = styled.button`
         ${({ theme }) => theme.colors.primary.primaryColor} 100%
       );
     }
+
+    &__secondary-big {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline-color: transparent;
+      background-color: ${({ theme }) => theme.colors.basic.darkColor};
+    }
   }
 `;
 
