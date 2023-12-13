@@ -3,9 +3,8 @@ import ShoeCard from "../ShoeCard/ShoeCard";
 import ShoesListStyled from "./ShoesListStyled";
 
 const ShoesList = (): React.ReactElement => {
-  const shoes = useAppSelector((state) => {
-    return state.shoesState.shoes;
-  });
+  const shoes = useAppSelector((state) => state.shoesState.shoes);
+
   return (
     <ShoesListStyled>
       {shoes.map((shoe) => (
